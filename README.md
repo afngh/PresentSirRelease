@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# PresentSir — Smart Attendance System (JNTUACEA Edition)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![React Version](https://img.shields.io/badge/React-19.0-0056b3?style=flat-square&logo=react)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-6.1-646cff?style=flat-square&logo=vite)](https://vitejs.dev/)
+[![Status](https://img.shields.io/badge/Status-Beta%20Release-198754?style=flat-square)](https://github.com/afngh/PresentSirRelease)
+[![Institution](https://img.shields.io/badge/JNTUACEA-NAAC%20'A'%20Grade-0056b3?style=flat-square)](https://jntuacea.ac.in/)
 
-## Available Scripts
+A simple, clean, responsive single-page showcase website built with **React + Vite** to showcase the **PresentSir Smart Attendance Mobile App** for students and faculty of **JNTUA College of Engineering Ananthapuramu**.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🌟 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **JNTUACEA Brand Identity**: Styled with the academic blue header branding, clean card layouts, and accreditation badges.
+- **Direct APK Download**: Serves `public/app-release.apk` directly via the "Download for Android" button.
+- **iOS App Store Ready**: Built-in iOS download card with a "Coming Soon" badge, ready to be updated when the iOS build is live.
+- **Step-by-Step Android Installation Guide**: Numbered 3-step guide for enabling unknown sources and installing the APK.
+- **Interactive Screenshot Showcase**: Alternating showcase rows with screenshot previews inside realistic mobile frames.
+- **Development Team Spotlight**: Features Lead Developers **Shaikshavali Masul** and **Shaik Afnan**.
+- **100% Fully Responsive**: Optimized for phones, tablets, and desktop displays.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📁 Project Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+c:\PsBackend\app-release\
+├── public/
+│   ├── app-release.apk         # Direct download APK file artifact
+│   ├── assets/
+│   │   └── phone-frame.png     # Phone chassis reference asset
+│   └── screenshots/            # App screenshots (1.jpg, 2.jpg, 3.jpg)
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx          # Glassmorphism minimal navbar
+│   │   ├── DownloadSection.jsx # Android/iOS download cards & install guide
+│   │   ├── AboutSection.jsx    # Platform overview & feature cards
+│   │   ├── ScreenshotGallery.jsx # Screenshot showcase with realistic frames
+│   │   ├── TeamSection.jsx     # Developer spotlight cards
+│   │   └── Footer.jsx          # JNTUACEA copyright footer
+│   ├── App.jsx                 # Main page container & data arrays
+│   ├── main.jsx                # Vite React entry point
+│   └── index.css               # Responsive design system tokens & styles
+├── index.html                  # HTML entry point with Inter Google Fonts
+├── vite.config.js              # Vite configuration
+└── package.json                # Project dependencies
+```
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Install Dependencies
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Run Development Server
+```bash
+npm run dev
+```
+Open `http://localhost:3000` in your browser.
 
-### `npm run eject`
+### 3. Build for Production
+```bash
+npm run build
+```
+The optimized production bundle will be generated inside the `dist/` directory.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📱 How to Update when iOS App is Ready
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+When your iOS build is approved on TestFlight or the Apple App Store:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Open `src/components/DownloadSection.jsx`.
+2. Locate the iOS card (`ios-card-disabled`) section around line 76.
+3. Update the button element:
+   - Change `disabled` to `disabled={false}`.
+   - Replace `<button>` with `<a href="YOUR_APP_STORE_LINK" className="minimal-pill-btn btn-primary-pill">`.
+4. Update the status badge from `Coming Soon` to `Available on App Store`.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 👨‍💻 Development Team
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Shaikshavali Masul** — Lead Developer & System Architect (*JNTUA College of Engineering Ananthapuramu*)
+- **Shaik Afnan** — Lead Mobile & Frontend Developer (*JNTUA College of Engineering Ananthapuramu*)
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📜 License & Copyright
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+© **JNTUACEA - All rights reserved.**  
+Designed & Developed for JNTUA College of Engineering Ananthapuramu.
